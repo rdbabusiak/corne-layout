@@ -62,7 +62,7 @@
         };
 
         NAV {
-            display-name = "🡸🡻🡹🡺";
+            display-name = "Nav";
             bindings = <
 &none  &none           &mkp MB4        &mmv MOVE_UP    &mkp MB5         &none              &kp HOME        &kp PAGE_DOWN   &kp PG_UP     &kp END          &none  &none
 &none  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
