@@ -44,13 +44,13 @@
             bindings = <
 &togt COLEMAK TAB  &kp Q      &kp W    &kp E   &kp R  &kp T      &kp Y    &kp U      &kp I      &kp O    &kp P     &kp BACKSLASH
 &kp BKSP           &kp A      &kp S    &kp D   &kp F  &kp G      &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT          &lt NAV Z  &kp X    &kp C   &kp V  &kp B      &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+&mt LSHFT LPAR     &lt NAV Z  &kp X    &kp C   &kp V  &kp B      &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mt RSHIFT RPAR
                                &kp LCTRL  &kp SPACE  &mo NUM    &mo SYM  &kp ENTER  &kp RALT
             >;
         };
         
         colemak_dh {
-            display-name= "COLEMAK";
+            display-name= "CMK-DH";
             
             bindings = <
 &trans  &kp Q      &kp W  &kp F   &kp P   &kp B        &kp J   &kp L   &kp U      &kp Y    &kp SEMI     &trans
