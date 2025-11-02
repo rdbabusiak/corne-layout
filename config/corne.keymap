@@ -64,7 +64,7 @@
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <10>;
-            bindings = &macro_tap &kp T;
+            bindings = <&macro_tap &kp T>;
         };
         MACRO(lambda, &macro_tap &kp EQUAL &macro_tap &kp GT);
         MACRO(gte,    &macro_tap &kp GT &macro_tap &kp EQUAL);
