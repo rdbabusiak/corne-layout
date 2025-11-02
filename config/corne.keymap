@@ -45,7 +45,8 @@
     };
     macros {
         dual: dual {
-            compatible: "zmk,behavior-macro";
+            label = "dual keypress"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <2>
             bindings 
                 = <&macro_param_1to1>
