@@ -25,16 +25,6 @@
 
 
 / {
-    macros {
-        dual: dual {
-            compatible: "zmk,behavior-macro";
-            #binding-cells = <2>
-            bindings = 
-                <&macro_param_1to1>,
-                <&macro_param_2to1>
-                <&macro_tap &kp K1 &kp K2>
-        };
-    };
     behaviors {
         togt: toggle_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -51,6 +41,17 @@
             tapping-term-ms = <500>;
             bindings = <&kp>, <&kp>;
             display-name = "Hold-Tap";
+        };
+    };
+    macros {
+        dual: dual {
+            compatible: "zmk,behavior-macro";
+            #binding-cells = <2>
+            bindings 
+                = <&macro_param_1to1>
+                , <&macro_param_2to1>
+                , <&macro_tap &kp K1 &kp K2>
+                ;
         };
     };
     keymap {
