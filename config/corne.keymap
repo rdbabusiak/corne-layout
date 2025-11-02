@@ -4,21 +4,6 @@
  * SPDX-License-Identifier: MIT
  */
  
- 
- //MACRO SHORTCUT
- #define STRINGIFY(x) #x
- #define EXPAND_AND_STRINGIFY(x) STRINGIFY(x)
- #define MACRO(NAME, BINDINGS) \
-   mcr_##NAME: mcr_##NAME { \
-     label = EXPAND_AND_STRINGIFY(mcr_##NAME); \
-     compatible = "zmk,behavior-macro"; \
-     #binding-cells = <0>; \
-     wait-ms = <20>; \
-     tap-ms = <10>; \
-     bindings = <BINDINGS>; \
-   };
- 
- 
 //MOUSE CONFIG
  #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
  #define ZMK_POINTING_DEFAULT_SCRL_VAL 15    // default: 10
@@ -59,16 +44,27 @@
         };
     };
     macros {
-        mcr_test: mcr_test {
+        lambda: lambda {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <10>;
-            bindings = <&macro_tap &kp T>;
+            bindings = <&macro_tap &kp GT &kp EQUAL>;
         };
-        MACRO(lambda, &macro_tap &kp EQUAL &macro_tap &kp GT);
-        MACRO(gte,    &macro_tap &kp GT &macro_tap &kp EQUAL);
-        MACRO(lte,    &macro_press &kp &macro_tap LT &kp EQUAL);
+        gte: gte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp GT &kp EQUAL>;
+        };
+        lte: lte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LT &kp EQUAL>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -110,10 +106,10 @@
             display-name = "Symbols";
             
             bindings = <
-&trans  &trans     &trans     &mcr_lte   &mcr_gte   &kp LPAR        &kp RPAR  &mcr_lambda  &kp STAR  &kp CARAT  &kp RBKT   &trans
-&trans  &kp UNDER  &kp PIPE   &kp AMPS   &kp EXCL   &kp LBRC        &kp RBRC  &kp EQUAL       &kp PLUS  &kp MINUS  &kp SEMI   &kp GRAVE  
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LBKT        &kp RBKT  &kp AT          &kp HASH  &kp DLLR   &kp PRCNT  &trans
-                              &trans          &trans            &trans        &trans    &trans          &trans
+&trans  &trans     &trans     &lte       &gte       &kp LPAR        &kp RPAR  &lambda    &kp STAR  &kp CARAT  &kp RBKT   &trans
+&trans  &kp UNDER  &kp PIPE   &kp AMPS   &kp EXCL   &kp LBRC        &kp RBRC  &kp EQUAL  &kp PLUS  &kp MINUS  &kp SEMI   &kp GRAVE  
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LBKT        &kp RBKT  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT  &trans
+                              &trans          &trans            &trans        &trans     &trans    &trans
             >;
         };
 
