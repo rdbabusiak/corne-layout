@@ -49,21 +49,21 @@
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <10>;
-            bindings = <&macro_tap &kp GT &kp EQUAL>;
+            bindings = <&kp GT &kp EQUAL>;
         };
         gte: gte {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <10>;
-            bindings = <&macro_tap &kp GT &kp EQUAL>;
+            bindings = <&kp GT &kp EQUAL>;
         };
         lte: lte {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
             tap-ms = <10>;
-            bindings = <&macro_tap &kp LT &kp EQUAL>;
+            bindings = <&kp LT &kp EQUAL>;
         };
     };
     keymap {
@@ -106,7 +106,7 @@
             display-name = "Symbols";
             
             bindings = <
-&trans  &trans     &trans     &lte       &gte       &kp LPAR        &kp RPAR  &lambda    &kp STAR  &kp CARAT  &kp RBKT   &trans
+&trans  &trans     &trans     &lte       &gte       &kp LPAR        &kp RPAR  &lambda    &kp STAR  &kp CARET  &kp RBKT   &trans
 &trans  &kp UNDER  &kp PIPE   &kp AMPS   &kp EXCL   &kp LBRC        &kp RBRC  &kp EQUAL  &kp PLUS  &kp MINUS  &kp SEMI   &kp GRAVE  
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LBKT        &kp RBKT  &kp AT     &kp HASH  &kp DLLR   &kp PRCNT  &trans
                               &trans     &trans     &trans          &trans    &trans     &trans
