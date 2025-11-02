@@ -73,10 +73,10 @@
             display-name = "QWERTY";
             
             bindings = <
-&mt LG(L) ESC  &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U      &kp I      &kp O    &kp P       &to COLEMAK
-&none          &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J      &kp K      &kp L    &kp SEMI    &none
-&none          &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
-            &mt 0 LA(RET)    &mt 0 TAB    &mt NUM SPACE        &mt SYM RET    &mt NAV BSPC    &mt FN DEL
+&mt LG(L) ESC  &kp Q    &kp W    &kp E    &kp R    &kp T                &kp Y    &kp U      &kp I      &kp O    &kp P       &to COLEMAK
+&none          &kp A    &kp S    &kp D    &kp F    &kp G                &kp H    &kp J      &kp K      &kp L    &kp SEMI    &none
+&none          &kp Z    &kp X    &kp C    &kp V    &kp B                &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
+               &mt 0 LA(RET)     &mt 0 TAB         &mt NUM SPACE        &mt SYM RET         &mt NAV BSPC        &kp DEL
             >;
         };
         
