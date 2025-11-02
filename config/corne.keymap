@@ -59,9 +59,9 @@
         };
     };
     macros {
-        MACRO(lambda, &macro_press &kp EQUAL &kp GT);
-        MACRO(gte, &macro_press &kp GT &kp EQUAL);
-        MACRO(lte, &macro_press &kp LT &kp EQUAL);
+        MACRO(lambda, &macro_tap &kp EQUAL &macro_tap &kp GT);
+        MACRO(gte,    &macro_tap &kp GT &macro_tap &kp EQUAL);
+        MACRO(lte,    &macro_press &kp &macro_tap LT &kp EQUAL);
     };
     keymap {
         compatible = "zmk,keymap";
