@@ -25,6 +25,16 @@
 
 
 / {
+    macros {
+        dual: dual {
+            compatible: "zmk,behavior-macro";
+            #binding-cells = <2>
+            bindings = 
+                <&macro_param_1to1>,
+                <&macro_param_2to1>
+                <&macro_tap &kp K1 &kp K2>
+        };
+    };
     behaviors {
         togt: toggle_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -34,6 +44,14 @@
             bindings = <&tog>, <&kp>;
             display-name = "Toggle-Tap";
         };
+        ht: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Hold-Tap";
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -42,10 +60,10 @@
             display-name = "QWERTY";
             
             bindings = <
-&togt COLEMAK TAB  &kp Q      &kp W    &kp E   &kp R  &kp T      &kp Y    &kp U      &kp I      &kp O    &kp P     &kp BACKSLASH
-&kp BKSP           &kp A      &kp S    &kp D   &kp F  &kp G      &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
-&mt LSHFT LPAR     &lt NAV Z  &kp X    &kp C   &kp V  &kp B      &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mt RSHIFT RPAR
-                               &kp LCTRL  &kp SPACE  &mo NUM    &mo SYM  &kp ENTER  &kp RALT
+&mt LG(L) ESC  &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U      &kp I      &kp O    &kp P       &to COLEMAK
+&none          &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J      &kp K      &kp L    &kp SEMI    &none
+&none          &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
+            &mt 0 ALT(RET)    &mt 0 TAB    &mt NUM SPACE        &mt SYM RET    &mt NAV BSPC    &mt FN DEL
             >;
         };
         
@@ -53,9 +71,9 @@
             display-name= "CMK-DH";
             
             bindings = <
-&trans  &kp Q      &kp W  &kp F   &kp P   &kp B        &kp J   &kp L   &kp U      &kp Y    &kp SEMI     &trans
-&trans  &kp A      &kp R  &kp S   &kp T   &kp G        &kp M   &kp N   &kp E      &kp I    &kp O     &trans
-&trans  &lt NAV Z  &kp X  &kp C   &kp D   &kp V        &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
+&trans  &kp Q    &kp W    &kp F   &kp P   &kp B        &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &to QWERTY
+&trans  &kp A    &kp R    &kp S   &kp T   &kp G        &kp M   &kp N   &kp E      &kp I    &kp O     &trans
+&trans  &kp Z    &kp X    &kp C   &kp D   &kp V        &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
                       &trans  &trans  &trans       &trans  &trans  &trans
             >;
         };
@@ -64,21 +82,21 @@
             display-name = "Numbers";
             
             bindings = <
-&trans   &none   &none   &none   &none   &none         &none   &none   &none   &none   &none  &trans
-&kp DEL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
-&trans   &trans  &trans  &trans  &trans  &trans        &none   &none   &none   &none   &none  &trans
-                         &trans  &trans  &trans        &trans  &trans  &trans
-            >;
+&trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                 &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
+&trans   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V) &kp LC(Y)   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+                         &trans  &trans  &trans                 &trans  &trans  &trans ??
+            >; 
         };
 
         symbols {
             display-name = "Symbols";
             
             bindings = <
-&trans   &trans     &trans     &kp LBKT   &kp LBRC   &trans           &trans     &kp RBRC  &kp RBKT   &trans    &trans     &trans
-&kp DEL  &kp UNDER  &kp QMARK  &kp PIPE   &kp AMPS   &kp EXCL         &kp EQUAL  &kp PLUS  &kp MINUS  &kp STAR  &kp SEMI   &kp GRAVE
-&trans   &kp LC(Z)  &kp LC(Y)  &kp LC(X)  &kp LC(C)  &kp LC(V)        &kp UNDER  &kp AT    &kp HASH   &kp DLLR  &kp PRCNT  &trans
-                               &trans     &trans     &trans           &trans     &trans    &trans
+&trans  &trans     &trans     &dual LT EQUAL  &dual GT EQUAL  &kp LPAR        &kp RPAR  &dual EQUAL GT  &kp STAR  &kp CARAT  &kp RBKT   &trans
+&trans  &kp UNDER  &kp PIPE   &kp AMPS        &kp EXCL        &kp LBRC        &kp RBRC  &kp EQUAL       &kp PLUS  &kp MINUS  &kp SEMI   &kp GRAVE  
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)       &kp LC(V)       &kp LBKT        &kp RBKT  &kp AT          &kp HASH  &kp DLLR   &kp PRCNT  &trans
+                              &trans          &trans            &trans        &trans    &trans          &trans
             >;
         };
 
@@ -89,7 +107,7 @@
 &none  &none           &mkp MB4        &mmv MOVE_UP    &mkp MB5         &none              &kp HOME        &kp PAGE_DOWN   &kp PG_UP     &kp END          &none  &none
 &none  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
 &none  &none           &none           &none           &none            &none              &kp UNDER       &msc SCRL_DOWN  &msc SCRL_UP  &kp RBRC         &none  &none
-                                       &mkp MCLK       &mkp LCLK        &mkp RCLK          &kp RET         &trans          &kp RALT
+                                       &mkp MCLK       &mkp RCLK        &mkp LCLK         &kp RET         &trans          &kp RALT
             >;
         };
     };
