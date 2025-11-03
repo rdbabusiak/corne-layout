@@ -76,9 +76,9 @@
         game {
             display-name = "Game";
             bindings = <
-&kp ESC    &kp TAB     &kp Q   &kp W   &kp E   &kp R        &kp N6          &kp N7          &kp N8          &kp N9              &kp N0      &to QWERTY
-&kp LCTRL  &kp LSHIFT  &kp A   &kp S   &kp D   &kp F        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW     &kp TILDE   &kp LG(LA(G))
-&kp HOME   &kp END     &kp Z   &kp X   &kp C   &kp V        &kp N1          &kp N2          &kp N3          &kp N4              &kp N5      &kp F12 
+&kp ESC    &kp TAB     &kp Q   &kp W   &kp E   &kp R        &kp KP_N6       &kp KP_N7       &kp KP_N8      &kp KP_N9        &kp KP_N0      &to QWERTY
+&kp LCTRL  &kp LSHIFT  &kp A   &kp S   &kp D   &kp F        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp TILDE      &kp LG(LA(G))
+&kp HOME   &kp END     &kp Z   &kp X   &kp C   &kp V        &kp KP_N1       &kp KP_N2       &kp KP_N3      &kp KP_N4        &kp KP_N5      &kp F12 
                         &kp F2  &kp F1  &kp SPACE           &kp DOT         &kp RET         &kp COMMA
             >;
         };
