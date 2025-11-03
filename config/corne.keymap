@@ -28,7 +28,7 @@
 
 / {
     behaviors {
-        lth: layer_tap_hold_pref:{
+        lth: layer_tap_hold_pref{
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
