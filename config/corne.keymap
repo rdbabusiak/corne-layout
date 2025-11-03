@@ -82,7 +82,7 @@
         };
         
         colemak_dh {
-        display-name= "CMK-DH";
+        display-name = "CMK-DH";
             
             bindings = <
 &trans  &kp Q    &kp W    &kp F   &kp P   &kp B        &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &to GAME
@@ -93,7 +93,7 @@
         };
         
         game {
-            display-name: "Game";
+            display-name = "Game";
        
             bindings = <
 &kp ESC    &kp TAB     &kp Q   &kp W   &kp E   &kp R        &kp N6          &kp N7          &kp N8          &kp N9              &kp N0      &to QWERTY
