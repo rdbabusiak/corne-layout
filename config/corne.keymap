@@ -56,10 +56,10 @@
         qwerty {
             display-name = "QWERTY";
             bindings = <
-&kp TAB        &kp Q        &kp W   &kp E   &kp R   &kp T        &kp Y      &kp U       &kp I       &kp O       &kp P       &to COLEMAK
+&mt LG(L) ESC        &kp Q        &kp W   &kp E   &kp R   &kp T        &kp Y      &kp U       &kp I       &kp O       &kp P       &to COLEMAK
 &kp BSPC       &kp A        &kp S   &kp D   &kp F   &kp G        &kp H      &kp J       &kp K       &kp L       &kp SEMI    &kp APOS
 &kp LSHIFT     &lt NAV Z    &kp X   &kp C   &kp V   &kp B        &kp N      &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHIFT 
-           &mt LCTRL LA(RET)    &mt LALT SPACE    &mo NUM        &mo SYM    &kp RET     &kp RGUI
+     &mt LCTRL LA(RET)      &kp LALT        &lt NUM SPACE        &lt SYM RET    &kp TAB     &kp RGUI
             >;
         };
         
@@ -106,10 +106,10 @@
         navigation {
             display-name = "Nav";
             bindings = <
-&mt LG(L) ESC  &trans           &mkp MB4        &mmv MOVE_UP    &mkp MB5         &trans              &kp HOME        &kp PAGE_DOWN   &kp PG_UP     &kp END          &out OUT_USB  &out OUT_BLE
+&trans  &trans           &mkp MB4        &mmv MOVE_UP    &mkp MB5         &trans              &kp HOME        &kp PAGE_DOWN   &kp PG_UP     &kp END          &out OUT_USB  &out OUT_BLE
 &trans  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none         &bt BT_CLR
 &trans  &trans           &trans           &trans           &trans            &trans              &kp UNDER       &msc SCRL_DOWN  &msc SCRL_UP  &kp RBRC         &bt BT_PRV    &bt BT_NXT
-                                       &mkp MCLK       &mkp LCLK        &mkp RCLK          &kp RET         &trans          &kp RALT
+                                       &mkp MCLK       &mkp RCLK        &mkp LCLK          &kp RET         &trans          &kp RALT
             >;
         };
     };
