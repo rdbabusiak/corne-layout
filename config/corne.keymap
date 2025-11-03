@@ -87,7 +87,7 @@
             display-name = "Numbers";
             bindings = <
 &trans   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                 &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
+&kp DEL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                 &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
 &trans   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V) &kp LC(Y)   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
                          &trans  &trans  &trans                 &trans  &trans  &trans
             >; 
@@ -96,9 +96,9 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&trans  &trans      &LBRK      &kp LBRC   &kp LPAR   &gte           &lambda    &kp RPAR  &kp RBRC  &kp RBRK    &kp CARET  &trans
-&trans  &kp UNDER   &kp PRCNT  &kp PIPE   &kp AMPS   &kp EXCL       &kp EQUAL  &kp PLUS   &kp MINUS  &kp STAR  &kp SEMI   &kp GRAVE  
-&trans  &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &lte           &trans     &kp AT     &kp HASH   &kp DLLR  &kp BSLH   &trans
+&trans   &trans      &kp LBRK      &kp LBRC   &kp LPAR   &gte        &lambda    &kp RPAR  &kp RBRC  &kp RBRK    &kp CARET  &trans
+&kp DEL  &kp UNDER   &kp PRCNT  &kp PIPE   &kp AMPS   &kp EXCL       &kp EQUAL  &kp PLUS   &kp MINUS  &kp STAR  &kp SEMI   &kp GRAVE  
+&trans   &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &lte           &trans     &kp AT     &kp HASH   &kp DLLR  &kp BSLH   &trans
                                &trans     &trans     &trans         &trans     &trans     &trans
             >;
         };
